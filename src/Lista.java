@@ -34,14 +34,14 @@ public class Lista {
     }
 
     //   Ej insertar este libro despues del quinto libro
-    public void insertarDespues(int n, Libro libro) {
+    public void insertarEn(int n, Libro libro) {
         Nodo newNodo = new Nodo(libro);
         if (cabeza == null) {
             cabeza = newNodo;
         } else {
             int contador = 0;
             Nodo puntero = cabeza;
-            while (contador < n && puntero.siguiente != null) {
+            while (contador < (n - 1) && puntero.siguiente != null) {
                 puntero = puntero.siguiente;
                 contador++;
             }
@@ -128,6 +128,16 @@ public class Lista {
                 temp.siguiente = null;
                 longitud--;
             }
+        }
+    }
+
+    public void mostrarPorConsola() {
+        System.out.println("Mostrando lista");
+        Nodo nodo = cabeza;
+
+        while(nodo != null) {
+            System.out.println(nodo.libro.getTitulo());
+            nodo = nodo.siguiente;
         }
     }
 }
