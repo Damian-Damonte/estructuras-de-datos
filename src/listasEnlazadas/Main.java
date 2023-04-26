@@ -1,3 +1,8 @@
+package listasEnlazadas;
+
+import listasEnlazadas.Libro;
+import listasEnlazadas.Lista;
+
 public class Main {
     public static void main(String[] args) {
         Libro libro1 = new Libro("libro1", "autor1", "1");

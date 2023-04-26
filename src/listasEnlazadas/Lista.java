@@ -1,3 +1,7 @@
+package listasEnlazadas;
+
+import listasEnlazadas.Libro;
+
 public class Lista {
     private Nodo cabeza;
 //  puedo agregarle atributos a la lista
