@@ -36,4 +36,12 @@ public class Empleado implements Comparable<Empleado>{
             return 1;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

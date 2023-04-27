@@ -42,12 +42,48 @@ public class BST implements IBST<Empleado> {
 
     @Override
     public boolean existe(int id) {
-        return false;
+        if (valor != null) { // Comprobar que el arbol no esté vacio
+
+            if (id == valor.getId()) { // El elemento buscado es la raíz
+                return true;
+
+            } else if (id < valor.getId() && izdo != null) { // el id es menor al valor actual, me voy por el subarbol izq
+                return izdo.existe(id);
+
+            } else if(id > valor.getId() && dcho != null) { // el id es mayor al valor actual, me voy por el subarbol dcho
+                return dcho.existe(id);
+
+            } else {
+                return false;
+            }
+
+        } else { // El arbol está vacio
+            return false;
+        }
     }
 
     @Override
     public Empleado obtener(int id) {
-        return null;
+//      Es similar al existe() solo que en este caso devuelve el valor
+
+        if (valor != null) { // Comprobar que el arbol no esté vacio
+
+            if (id == valor.getId()) { // El elemento buscado es la raíz
+                return valor;
+
+            } else if (id < valor.getId() && izdo != null) { // el id es menor al valor actual, me voy por el subarbol izq
+                return izdo.obtener(id);
+
+            } else if(id > valor.getId() && dcho != null) { // el id es mayor al valor actual, me voy por el subarbol dcho
+                return dcho.obtener(id);
+
+            } else {
+                return  null;
+            }
+
+        } else { // El arbol está vacio
+            return null;
+        }
     }
 
     @Override

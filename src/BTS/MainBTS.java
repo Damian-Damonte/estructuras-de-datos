@@ -18,5 +18,16 @@ public class MainBTS {
         bst.insertar(empleado2);
         System.out.println("Está vacio: " + bst.esVacio() + " - Es hoja: " + bst.esHoja());
 
+        localizar(bst, 2);
+        localizar(bst, 44);
+
+    }
+
+    private static void localizar(BST bst, int id) {
+        if (bst.existe(id)) {
+            System.out.println(bst.obtener(id));
+        } else {
+            System.out.println("No se encuentró al emplicado con id " + id);
+        }
     }
 }
