@@ -39,9 +39,6 @@ public class Empleado implements Comparable<Empleado>{
 
     @Override
     public String toString() {
-        return "Empleado{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                '}';
+        return "Empleado " + id;
     }
 }

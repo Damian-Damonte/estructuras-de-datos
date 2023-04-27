@@ -86,20 +86,77 @@ public class BST implements IBST<Empleado> {
         }
     }
 
+    private void preordenImpl(String prefijo) {
+        if (valor != null) {
+            System.out.println(prefijo + valor);
+            if (izdo != null) izdo.preordenImpl(prefijo + "  ");
+            if(dcho != null) dcho.preordenImpl(prefijo + "  ");
+        }
+    }
+
     @Override
     public void preorden() {
+        preordenImpl("");
+    }
 
+// METODO ORIGINAL, LO CAMBIAMOS PARA QUE SEA MAS VISUAL EN LA CONSOLA
+//    @Override
+//    public void preorden() {
+////      1- Raíz, 2- Subarbol izq, 3- Subarbol dcho
+//        if (valor != null) {
+//            System.out.println(valor);
+//            if (izdo != null) izdo.preorden();
+//            if(dcho != null) dcho.preorden();
+//        }
+//    }
+
+    private void inordenImpl(String prefijo) {
+        if (valor != null) {
+            if (izdo != null) izdo.inordenImpl(prefijo + "  ");
+            System.out.println(prefijo + valor);
+            if(dcho != null) dcho.inordenImpl(prefijo + "  ");
+        }
     }
 
     @Override
     public void inorden() {
+        inordenImpl("");
+    }
 
+    //    ORIGINAL
+//    @Override
+//    public void inorden() {
+////      1- Subarbol izq, 2- Raíz, 3- Subarbol dcho
+//        if (valor != null) {
+//            if (izdo != null) izdo.inorden();
+//            System.out.println(valor);
+//            if(dcho != null) dcho.inorden();
+//        }
+//    }
+
+    private void postordenImpl(String prefijo) {
+        if (valor != null) {
+            if (izdo != null) izdo.postordenImpl(prefijo + "  ");
+            if(dcho != null) dcho.postordenImpl(prefijo + "  ");
+            System.out.println(prefijo + valor);
+        }
     }
 
     @Override
     public void postorden() {
-
+        postordenImpl("");
     }
+
+    //    ORIGINAL
+//    @Override
+//    public void postorden() {
+////      1- Subarbol izq, 2- Subarbol dcho, 3- Raíz
+//        if (valor != null) {
+//            if (izdo != null) izdo.postorden();
+//            if(dcho != null) dcho.postorden();
+//            System.out.println(valor);
+//        }
+//    }
 
     @Override
     public void eliminar(int id) {
